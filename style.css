@@ -9,8 +9,8 @@
 }
 body{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content:space-between ;
     align-items: center;
     gap:250px;
 }
@@ -28,6 +28,7 @@ body{
     transform: translate(0,5px);
 }
 #bookHolder{
+    margin-left: 100px;
     gap:30px;
     flex-direction: column;
     display: flex;
