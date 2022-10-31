@@ -7,13 +7,7 @@
     user-select: none;
     -webkit-user-drag: none;
 }
-body{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between ;
-    align-items: center;
-    gap:250px;
-}
+
 #book{
     height: 100px;
 }
@@ -36,16 +30,27 @@ body{
     align-items: center;
     transform: translate(0,100%);
 }
-#powerUpImg{
+.powerUpImg{
     height:50px;
     margin-right: 400px;
 }
-#powerUpImg:hover{
+.powerUpImg:hover{
     cursor:pointer;
 }
 
-#powerUpDesc{
+.powerUpDesc{
     position: fixed;
     display:block;
     font-size: x-small;
+    visibility: hidden;
+    background: rgb(48, 48, 48);
+    color:white;
+}
+.powerUpGrid{
+    display: grid;
+    grid-template-columns: 55px 55px;
+}
+.title{
+    font-weight: 500;
+    font-size: medium;
 }
