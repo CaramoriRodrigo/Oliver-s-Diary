@@ -11,12 +11,16 @@ let wordsQuantity = 0;
 let clickPower = 1;
 let wpsPower = 0;
 let PowerUpClickLevel = 0;
+const bookClick = new Audio("sounds/bookClick.mp3");
+const PowerUpSound = new Audio("sounds/powerUp.mp3")
 
 
 
 function clickEvent(){
+    bookClick.pause()
     wordsQuantity = wordsQuantity + clickPower
     wordsQuantityElement.textContent = wordsQuantity;
+    clickSound();
 }
 function powerUpBuy1(){
     if(wordsQuantity >= 100){
@@ -25,6 +29,7 @@ function powerUpBuy1(){
     wordsQuantity = wordsQuantity - 100;
     wordsQuantityElement.textContent = wordsQuantity;
     PowerUpClickLevel++
+    PowerUpSound.play()
     alert("You increase in one your writing power!");
     }else{
         alert("You don't have 100 words yet...")
@@ -37,6 +42,7 @@ function powerUpBuy2(){
     wordsQuantity = wordsQuantity - 250;
     wordsQuantityElement.textContent = wordsQuantity;
     PowerUpClickLevel++
+    PowerUpSound.play()
     alert("You increase in one your writing power!");
     }else{
         alert("You don't have 250 words yet...")
@@ -48,6 +54,7 @@ function powerUpBuy3(){
     wordsQuantity = wordsQuantity - 500;
     wordsQuantityElement.textContent = wordsQuantity;
     wpsPower++
+    PowerUpSound.play()
     wpsStart();
     alert("You increase in one your writing power por second!");
     }else{
@@ -85,4 +92,7 @@ function wpsStart(){
         wordsQuantityElement.textContent = wordsQuantity;
         wpsValue.textContent = wpsPower;
     }, 1000);
+}
+function clickSound(){
+    bookClick.play()
 }
