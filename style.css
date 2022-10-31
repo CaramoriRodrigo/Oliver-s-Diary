@@ -38,13 +38,14 @@ body{
 }
 #powerUpImg{
     height:50px;
+    margin-right: 400px;
 }
-#powerUpCard{
-    display: flex;
-    flex-direction: row;
+#powerUpImg:hover{
+    cursor:pointer;
 }
-#powerUpDesc{
-    display: flex;
-    flex-direction: column;
 
+#powerUpDesc{
+    position: fixed;
+    display:block;
+    font-size: x-small;
 }

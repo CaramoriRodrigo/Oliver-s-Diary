@@ -1,6 +1,7 @@
 const book = document.getElementById("book");
 const wordsQuantityElement = document.getElementById("wordsQuantity");
-const powerUp = document.getElementById("powerUpCard")
+const powerUp = document.getElementById("powerUpImg")
+const powerUpDesc = document.getElementById("powerUpDesc")
 let wordsQuantity = 0;
 let clickPower = 1;
 let PowerUpClickLevel = 0;
@@ -23,12 +24,17 @@ function powerUpBuy(){
     }
 }
 book.addEventListener("click",clickEvent)
-powerUpBuyButton.addEventListener("click",powerUpBuy)
+powerUp.addEventListener("click",powerUpBuy)
 
-
-// Localização do Mouse
-
-document.querySelector('body').addEventListener('mousemove', function(event) {
-    var posX = event.clientX,
-        posY = event.clientY;
+window.addEventListener("mousemove",function(e) {   
+    var X = e.clientX,
+        Y = e.clientY;
+        powerUpDesc.style.top = (Y + 20)  + 'px';
+        powerUpDesc.style.left = (X + 20)  + 'px';
+        PowerUpToolTip();
   });
+
+function PowerUpToolTip(){
+    powerUp.addEventListener("mouseover",function(){powerUpDesc.style.visibility = "visible";})
+    powerUp.addEventListener("mouseleave",function(){powerUpDesc.style.visibility = "hidden";})
+}
