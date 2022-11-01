@@ -12,9 +12,9 @@ let clickPower = 1;
 let wpsPower = 0;
 let PowerUpClickLevel = 0;
 const bookClick = new Audio("sounds/bookClick.mp3");
-const PowerUpSound = new Audio("sounds/powerUp.mp3")
-
-
+const PowerUpSound = new Audio("sounds/powerUp.mp3");
+localStorage.getItem('wordsValue')
+RunStorage()
 
 function clickEvent(){
     bookClick.pause()
@@ -96,3 +96,8 @@ function wpsStart(){
 function clickSound(){
     bookClick.play()
 }
+
+function RunStorage(){setInterval(() => {
+    localStorage.setItem('wordsValue', wordsQuantity)
+},1000)}
+
