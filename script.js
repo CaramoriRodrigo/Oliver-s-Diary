@@ -13,8 +13,7 @@ let wpsPower = 0;
 let PowerUpClickLevel = 0;
 const bookClick = new Audio("sounds/bookClick.mp3");
 const PowerUpSound = new Audio("sounds/powerUp.mp3");
-localStorage.getItem('wordsValue')
-RunStorage()
+
 
 function clickEvent(){
     bookClick.pause()
@@ -70,11 +69,11 @@ window.addEventListener("mousemove",function(e) {
     var X = e.clientX,
         Y = e.clientY;
         powerUpDesc.style.top = (Y + 20)  + 'px';
-        powerUpDesc.style.left = (X + 20)  + 'px';
+        powerUpDesc.style.left = (X - 150)  + 'px';
         powerUpDesc2.style.top = (Y + 20)  + 'px';
-        powerUpDesc2.style.left = (X + 20)  + 'px';
+        powerUpDesc2.style.left = (X - 150)  + 'px';
         powerUpDesc3.style.top = (Y + 20)  + 'px';
-        powerUpDesc3.style.left = (X + 20)  + 'px';
+        powerUpDesc3.style.left = (X -+ 150)  + 'px';
         PowerUpToolTip();
   });
 
@@ -96,8 +95,7 @@ function wpsStart(){
 function clickSound(){
     bookClick.play()
 }
-
-function RunStorage(){setInterval(() => {
-    localStorage.setItem('wordsValue', wordsQuantity)
-},1000)}
-
+setInterval(trocarTitulo,500)
+function trocarTitulo(){
+    document.title = "Oliver's Diary | You have : " + wordsQuantity + " Words";
+}

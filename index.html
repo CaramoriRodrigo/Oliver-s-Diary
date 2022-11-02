@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
 </head>
-<body>
+<body onload="titleChanger()">
     <aside class="leftAside">
         <img class ="logo" src="imgs/logo.png" alt="">
         <div class="whiteStroke"></div>
@@ -17,22 +17,25 @@
         <img id="book"class="book"src="imgs/books/firstBook.png">                                                        
         <div>
             <a>Words per second:</a>
-            <a>0</a>
+            <a id="wpsValue">0</a>
         </div>
     </aside>
     <div class="horizontalStroke"></div>
     <aside class="rightAside">
-        <div id="powerUp1">
+        <h1>Power Ups</h1>
+        <div class="powerUpGrid">
+         <div id="powerUp1">
             <img src="imgs/powerups/clickPower/firstPen.png" id="powerUpImg" class="powerUpImg">
             <span id="powerUpDesc" class="powerUpDesc"><a class="title">Comfortable Pen</a> <br> Increase your writing power by 2! <br> Price: 100 words </span>
-        </div>
-        <div id="powerUp2">
+         </div>
+         <div id="powerUp2">
             <img src="imgs/powerups/clickPower/secondPen.png" id="powerUpImg2" class="powerUpImg">
             <span id="powerUpDesc2" class="powerUpDesc"><a class="title">Orange Pen</a> <br> Increase your writing power by 3! <br> Price: 250 words </span>
-        </div>
-        <div id="powerUp3">
+         </div>
+         <div id="powerUp3">
             <img src="imgs/powerups/automatic/automaticPen/automaticPen1.png" id="powerUpImg3" class="powerUpImg">
             <span id="powerUpDesc3" class="powerUpDesc"><a class="title">Automatic Pen</a> <br> Make your WPS power increase by one <br> Price: 500 words </span>
+         </div>
         </div>
     </aside>
     <script src="script.js"></script>
